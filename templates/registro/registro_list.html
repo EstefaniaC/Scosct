@@ -1,0 +1,67 @@
+{% extends 'base/base.html' %}
+{% block content %}
+    <div class="container body">
+        <div class="main_container">
+            <!-- page content -->
+        <div class="right_col" role="main">
+
+         <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>
+                      Listado de Oficios Capturados
+                  </h3>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+
+                  <!--<div class="x_title">
+                    <h2>Paciente <small>Registrar</small></h2>
+
+                    <div class="clearfix"></div>
+                  </div>-->
+
+
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Nombre de quien entrega</th>
+                          <th>Número de Folio</th>
+                          <th>Asunto</th>
+                          <th>Coordinador</th>
+                          <th>Empresa</th>
+                          <th style="text-align: center">Acciones</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                       {% for registro in object_list %}
+                        <tr>
+                          <th scope="row">{{ registro.id }}</th>
+                          <td>{{ registro.nombreEntrega }}</td>
+                          <td>{{ registro.numeroFolio }}</td>
+                          <td>{{ registro.asunto }}</td>
+                          <td>{{ registro.coordinador }}</td>
+                          <td>{{ registro.empresa }}</td>
+                          <td style="text-align: center">
+                              <a class="btn btn-primary" href="{% url 'registro:editar' registro.id %}" data-toggle="tooltip" title="Editar Oficio"><i class="fa fa-pencil"></i></a>
+                              <a class="btn btn-danger" href="{% url 'registro:eliminar' registro.id %}" data-toggle="tooltip" title="Eliminar Oficio"><i class="fa fa-trash"></i></a></td>
+                        </tr>
+                       {% endfor %}
+
+                      </tbody>
+                    </table>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+
+        </div>
+    </div>
+{% endblock %}

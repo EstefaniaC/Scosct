@@ -1,0 +1,56 @@
+{% extends 'base/base.html' %}
+{% block content %}
+    <div class="container">
+        <div class="main_container">
+            <!-- page content -->
+        <div class="right_col" role="main">
+
+         <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>
+                      Eliminar Oficio
+                  </h3>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <!--<div class="x_title">
+                    <h2>Paciente <small>Registrar</small></h2>
+
+                    <div class="clearfix"></div>
+                  </div>-->
+                  <div class="x_content">
+
+                    <form class="form-horizontal form-label-left" method="POST">
+                        {% csrf_token %}
+                        <h1>¿Está seguro de eliminar el registro?</h1>
+                        <input type="submit" value="Eliminar" class="btn btn-danger" />
+                        <a type="submit" class="btn btn-info" href="{% url 'registro:listar' %}">Cancelar</a>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <br />
+
+          <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12">
+
+            </div>
+
+          </div>
+
+
+
+        </div>
+        <!-- /page content -->
+
+        </div>
+    </div>
+
+{% endblock %}

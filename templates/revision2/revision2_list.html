@@ -1,0 +1,73 @@
+{% extends 'base/base.html' %}
+{% block content %}
+    <div class="container body">
+        <div class="main_container">
+            <!-- page content -->
+        <div class="right_col" role="main">
+
+         <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>
+                      Listado de la 2da Revisión
+                  </h3>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+
+                  <!--<div class="x_title">
+                    <h2>Paciente <small>Registrar</small></h2>
+
+                    <div class="clearfix"></div>
+                  </div>-->
+
+
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Folio del Oficio</th>
+                          <th>Nombre del 2do Revisor</th>
+                          <th>Estado del  2do Revisor</th>
+                          <th>Observaciones</th>
+                          <th style="text-align: center">Acciones</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                       {% for revision2 in object_list %}
+                        <tr>
+                          <th>{{ revision2.id }}</th>
+                          <td>{{ revision2.registro.numeroOficio }}</td>
+                          <td>{{ revision2.nombreRevisor2 }}</td>
+                          <td>
+                            {% if revision2.estado2 == 'Revisado' %}
+                              <span class="label label-success">{{ revision2.estado2 }}</span>
+                              {% elif revision2.estado2 == 'En revision' %}
+                              <span class="label label-primary">{{ revision2.estado2 }}</span>
+                              {% elif revision2.estado2 == 'Cancelado' %}
+                              <span class="label label-danger">{{ revision2.estado2 }}</span>
+                            {% endif %}
+                          </td>
+                          <td>{{ revision2.observacion2 }}</td>
+                          <td style="text-align: center">
+                              <a class="btn btn-primary" href="{% url 'revision2:editar' revision2.id %}" data-toggle="tooltip" title="Editar Oficio"><i class="fa fa-pencil"></i></a>
+                              <a class="btn btn-danger" href="{% url 'revision2:eliminar' revision2.id %}" data-toggle="tooltip" title="Eliminar Oficio"><i class="fa fa-trash"></i></a></td>
+                        </tr>
+                       {% endfor %}
+
+                      </tbody>
+                    </table>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+
+        </div>
+    </div>
+{% endblock %}
