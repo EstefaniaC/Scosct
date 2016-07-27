@@ -74,7 +74,7 @@
   top: 0;
   width: 210px;
   z-index: 4000;
-  background: #25628e;
+  background: #0B173B;   /*menu desplejable -responsivo*/
   display: none;
 }
 .nav-sm ul.nav.child_menu li {
@@ -201,10 +201,10 @@ body .container.body .right_col {
   padding: 10px 20px 0;
   margin-left: 230px;
 }
-.nav_title {    /*Titulo del sitio arriba a la derecha*/
+.nav_title {    /*Titulo del sitio arriba a la izquierda*/
   width: 230px;
   float: left;
-  background: #25628e;
+  background: #0B173B;
   border-radius: 0;
   height: 57px;
 }
@@ -328,9 +328,9 @@ body .container.body .right_col {
 .top_nav .nav>li>a:focus, .top_nav .nav>li>a:hover, .top_nav .nav .open>a, .top_nav .nav .open>a:focus, .top_nav .nav .open>a:hover {
   background: #D9DEE4;
 }
-body {     /*Barra de menu*/
+body {     /*Sidebar*/
   color: #73879C;
-  background: #25628e;
+  background: #0B173B;
   /*#ECF0F1; #FCFCFC*/
   font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
   font-size: 13px;
