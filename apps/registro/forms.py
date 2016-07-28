@@ -25,7 +25,7 @@ class RegistroForm(forms.ModelForm):
             'nombreEntrega': 'Nombre de quien entrega el Oficio:',
             'numeroFolio': 'Número de registro:',
             'asunto': 'Asunto:',
-            'numeroOficio': 'Número de oficio del oficio:',
+            'numeroOficio': 'Número del oficio:',
             'coordinador': 'Coordinador:',
             'empresa': 'Empresa',
             'fechaRecibido': 'Fecha de recibido:',
