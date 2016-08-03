@@ -28,5 +28,5 @@ urlpatterns = [
     url(r'^revision2/', include('apps.revision2.urls', namespace="revision2")),
     url(r'^revision3/', include('apps.revision3.urls', namespace="revision3")),   
     url(r'^usuario/', include('apps.usuario.urls', namespace="usuario")),   
-    url(r'^$', login, {'template_name':'index.html'}, name='login'),
+    url(r'^login', login, {'template_name':'index.html'}, name='login'),
 ]
