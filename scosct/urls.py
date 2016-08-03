@@ -15,14 +15,18 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from scosct.views import Index
+#from scosct.views import Index
+from django.contrib.auth.views import login
+
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-	url(r'^$', Index.as_view(), name="index"),
+	#url(r'^$', Index.as_view(), name="index"),
     url(r'^inicio/', include('apps.administrador.urls', namespace="administrador")),
     url(r'^registro/', include('apps.registro.urls', namespace="registro")),
     url(r'^revision1/', include('apps.revision1.urls', namespace="revision1")),
     url(r'^revision2/', include('apps.revision2.urls', namespace="revision2")),
     url(r'^revision3/', include('apps.revision3.urls', namespace="revision3")),   
+    url(r'^usuario/', include('apps.usuario.urls', namespace="usuario")),   
+    url(r'^$', login, {'template_name':'index.html'}, name='login'),
 ]

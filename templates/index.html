@@ -26,15 +26,17 @@
       <div id="wrapper">
         <div id="login" class=" form">
           <section class="login_content">
-            <form>
+            <form method="POST">
+              {% csrf_token %}
               <h1>Acceder</h1>
               <div>
-                <input type="text" class="form-control" placeholder="Usuario" required="" />
+                <input name="username" type="text" class="form-control" placeholder="Usuario" required="" />
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="Contraseña" required="" />
+                <input name="password" type="password" class="form-control" placeholder="Contraseña" required="" />
               </div>
               <div>
+                <button type="submit">Ingresar</button>
                 <a class="btn btn-default submit" href="{% url 'registro:listar' %}">Acceder</a>
                 <a class="reset_pass" href="#">¿Olvidó su contraseña?</a>
               </div>
