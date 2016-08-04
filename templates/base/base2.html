@@ -1,0 +1,68 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>SCOSCT</title>
+	<link rel="icon" type="img/png" href="{% static 'C:\ProyectosMetrica\scosct\static\img\icono.png' %}">
+	<link href="{% static 'vendors/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="{% static 'vendors/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+	{% block extrahead %}
+	{% endblock %}
+	
+	
+</head>
+<body class="nav-md">
+<img class="img img-responsive" align="center" src="{% static 'C:\ProyectosMetrica\scosct\static\img\banner5.png' %}"/>
+<div class="container body">
+	<div class="main container">
+
+		
+		{% block content %}
+
+		{% endblock %}
+
+		{% block footer %}
+		{% endblock %}
+	</div>
+</div>
+	
+
+	<!-- jQuery 2.2.0 -->
+
+	<script src="{% static 'vendors/jquery/dist/jquery.min.js' %}"></script>
+    <!-- Bootstrap -->
+    <script src="{% static 'vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <!-- FastClick -->
+    <script src="{% static 'vendors/fastclick/lib/fastclick.js' %}"></script>
+    <!-- NProgress -->
+    <script src="{% static 'vendors/nprogress/nprogress.js' %}"></script>
+    <!-- Chart.js -->
+    <script src="{% static 'vendors/Chart.js/dist/Chart.min.js' %}"></script>
+    <!-- gauge.js -->
+    <script src="{% static 'vendors/bernii/gauge.js/dist/gauge.min.js' %}"></script>
+    <!-- bootstrap-progressbar -->
+    <!-- iCheck -->
+    <script src="{% static 'vendors/iCheck/icheck.min.js' %}"></script>
+    <!-- Skycons -->
+    <script src="{% static 'vendors/skycons/skycons.js' %}"></script>
+
+    <!-- jVectorMap -->
+    <!-- bootstrap-daterangepicker -->
+    <script src="{% static 'js/moment/moment.min.js' %}"></script>
+    <script src="{% static 'js/datepicker/daterangepicker.js' %}"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="{% static 'js/custom.js' %}"></script>
+
+	{% block extrajs %}
+	{% endblock %}
+
+
+
+	
+</body>
+</html>
