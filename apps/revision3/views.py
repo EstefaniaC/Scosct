@@ -10,6 +10,7 @@ from apps.revision3.forms import Revision3Form
 
 class Revision3List(ListView):
     model = Revision3
+    paginate_by = 50
     template_name = "revision3/revision3_list.html"
 
     def get_queryset(self):

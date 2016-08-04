@@ -11,7 +11,7 @@ from apps.registro.forms import RegistroForm
 class RegistroList(ListView):
     model = Registro
     template_name = "registro/registro_list.html"
-
+    paginate_by = 50
     def get_queryset(self):
         queryset = Registro.objects.filter(activo=True).order_by('id')
         return queryset
