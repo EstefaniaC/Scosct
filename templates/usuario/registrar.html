@@ -17,9 +17,9 @@
               <div class="title_left">
                 <h3>
                       {% if request.get_full_path == "/usario/registrar" %}
-                        Registrar Usuario 
+                        Registrar Nuevo Usuario 
                         {% else %}
-                        Editar Usuario
+                        Registrar Nuevo Usuario
                         {% endif %}
                   </h3>
               </div>
@@ -47,30 +47,45 @@
                           <label>Apellidos:</label>
                           <input class="form-control" type="text" name="last_name">  
                         </div>
+                        {% for error in form.nombre.errors %}
+                          <div class="help-block text-right animated fadeInDown" id="val-nombre-error">{{error}}</div>
+                        {% endfor %}
                       </div>
                       <div class="item form-group">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                           <label>Correo electrónico:</label>
                           <input class="form-control" type="text" name="email">  
                         </div>
+                        {% for error in form.nombre.errors %}
+                          <div class="help-block text-right animated fadeInDown" id="val-nombre-error">{{error}}</div>
+                        {% endfor %}
                       </div>
                       <div class="item form-group">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                           <label>Nombre de Usuario:</label>
                           <input class="form-control" type="text" name="username">  
                         </div>
+                        {% for error in form.nombre.errors %}
+                          <div class="help-block text-right animated fadeInDown" id="val-nombre-error">{{error}}</div>
+                        {% endfor %}
                       </div>
                       <div class="item form-group">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                           <label>Contrseña:</label>
                           <input class="form-control" type="password" name="password1">  
                         </div>
+                        {% for error in form.nombre.errors %}
+                          <div class="help-block text-right animated fadeInDown" id="val-nombre-error">{{error}}</div>
+                        {% endfor %}
                       </div>
                       <div class="item form-group">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                           <label>Confirmar contrseña:</label>
                           <input class="form-control" type="password" name="password2">  
                         </div>
+                        {% for error in form.nombre.errors %}
+                          <div class="help-block text-right animated fadeInDown" id="val-nombre-error">{{error}}</div>
+                        {% endfor %}
                       </div>         
 
 

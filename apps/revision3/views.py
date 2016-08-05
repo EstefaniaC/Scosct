@@ -16,7 +16,7 @@ class Revision3List(ListView):
     def get_queryset(self):
         queryset = Revision3.objects.filter(activo=True).order_by('id')
         return queryset
-
+        
 
 class Revision3Create(CreateView):
     model = Revision3

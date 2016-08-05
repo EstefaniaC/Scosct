@@ -40,8 +40,8 @@
                             {{ form.registro }}
                         </div>
                         {% for error in form.nombre.errors %}
-                                    <div class="help-block text-right animated fadeInDown" id="val-nombre-error">{{error}}</div>
-                                {% endfor %}
+                          <div class="help-block text-right animated fadeInDown" id="val-nombre-error">{{error}}</div>
+                        {% endfor %}
                       </div>
                       <div class="item form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.nombreRevisor2.name }}">{{ form.nombreRevisor2.label }}
@@ -49,6 +49,9 @@
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             {{ form.nombreRevisor2 }}
                         </div>
+                        {% for error in form.nombre.errors %}
+                          <div class="help-block text-right animated fadeInDown" id="val-nombre-error">{{error}}</div>
+                        {% endfor %}
                       </div>
                       <div class="item form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.observacion2.name }}">{{ form.observacion2.label }}
@@ -56,6 +59,9 @@
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             {{ form.observacion2 }}
                         </div>
+                        {% for error in form.nombre.errors %}
+                          <div class="help-block text-right animated fadeInDown" id="val-nombre-error">{{error}}</div>
+                        {% endfor %}
                       </div>
                       <div class="item form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.estado2.name }}">{{ form.estado2.label }}
@@ -63,6 +69,9 @@
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             {{ form.estado2 }}
                         </div>
+                        {% for error in form.nombre.errors %}
+                          <div class="help-block text-right animated fadeInDown" id="val-nombre-error">{{error}}</div>
+                        {% endfor %}
                       </div>
                       
                       <div class="form-group">
