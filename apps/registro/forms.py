@@ -10,9 +10,8 @@ class RegistroForm(forms.ModelForm):
         model = Registro
         fields = [
             'nombreEntrega',
-            'numeroFolio',
-            'asunto',
             'numeroOficio',
+            'asunto',
             'coordinador',
             'empresa',
             'fechaRecibido',
@@ -23,11 +22,10 @@ class RegistroForm(forms.ModelForm):
         ]
         labels = {
             'nombreEntrega': 'Nombre de quien entrega el Oficio:',
-            'numeroFolio': 'Número de registro:',
-            'asunto': 'Asunto:',
             'numeroOficio': 'Número del oficio:',
+            'asunto': 'Asunto:',
             'coordinador': 'Coordinador:',
-            'empresa': 'Empresa',
+            'empresa': 'Empresa:',
             'fechaRecibido': 'Fecha de recibido:',
             'modalidad': 'Modalidad:',
             'fechaEntrega': 'Fecha de entrega:',
@@ -36,9 +34,8 @@ class RegistroForm(forms.ModelForm):
         }
         widgets = {
             'nombreEntrega': forms.TextInput(attrs={'class': 'form-control'}),
-            'numeroFolio': forms.TextInput(attrs={'class': 'form-control'}),
-            'asunto': forms.TextInput(attrs={'class': 'form-control'}),
             'numeroOficio': forms.TextInput(attrs={'class': 'form-control'}),
+            'asunto': forms.TextInput(attrs={'class': 'form-control'}),
             'coordinador': forms.TextInput(attrs={'class': 'form-control'}),
             'empresa': forms.TextInput(attrs={'class': 'form-control'}),
             'fechaRecibido': forms.DateInput(attrs={'class': 'js-datepicker form-control',

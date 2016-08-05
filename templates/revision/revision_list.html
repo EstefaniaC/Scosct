@@ -1,0 +1,110 @@
+{% extends 'base/base.html' %}
+{% block content %}
+    <div class="container body">
+        <div class="main_container">
+            <!-- page content -->
+        <div class="right_col" role="main">
+
+         <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>
+                      Listado de Revisión
+                  </h3>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+
+                 <div class="x_title">
+                    <div class="clearfix"></div>
+                  </div>
+
+
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th style="text-align: center">#</th>
+                          <th style="text-align: center">Folio del Oficio</th>
+                          <th style="text-align: center">Estado de 1er Revisor</th>
+                          <th style="text-align: center">Editar</th>
+                          <th style="text-align: center">Estado del 2do Revisor</th>
+                          <th style="text-align: center">Editar</th>
+                          <th style="text-align: center">Estado del 3er Revisor</th>
+                          <th style="text-align: center">Editar</th>
+                          <th style="text-align: center">Acción</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                       {% for revision in object_list %}
+                        <tr>
+                          <th scope="row" style="text-align: center">{{ revision.id }}</th>
+                          <td style="text-align: center">{{ revision.registro.numeroOficio }}</td>
+                          <td style="text-align: center">
+                            {% if revision.estado1 == 'Revisado' %}
+                              <span class="label label-success">{{ revision.estado1 }}</span>
+                              {% elif revision.estado1 == 'En revision' %}
+                              <span class="label label-primary">{{ revision.estado1 }}</span>
+                              {% elif revision.estado1 == 'Cancelado' %}
+                              <span class="label label-danger">{{ revision.estado1 }}</span>
+                            {% endif %}
+                          </td>
+                          <td style="text-align: center">
+                              <a class="btn btn-primary" href="{% url 'revision:editar' revision.id %}" data-toggle="tooltip" title="Editar la 1ra Revisión"><i class="fa fa-pencil"></i></a>
+                          </td>
+                          <td style="text-align: center">
+                            {% if revision.estado2 == 'Revisado' %}
+                              <span class="label label-success">{{ revision.estado2 }}</span>
+                              {% elif revision.estado2 == 'En revision' %}
+                              <span class="label label-primary">{{ revision.estado2 }}</span>
+                              {% elif revision.estado2 == 'Cancelado' %}
+                              <span class="label label-danger">{{ revision.estado2 }}</span>
+                            {% endif %}
+                          </td>
+                          <td style="text-align: center">
+                              <a class="btn btn-primary" href="{% url 'revision:revisor2' revision.id %}" data-toggle="tooltip" title="Editar la 2da Revisión"><i class="fa fa-pencil"></i></a>
+                          </td>
+                          <td style="text-align: center">
+                            {% if revision.estado3 == 'Revisado' %}
+                              <span class="label label-success">{{ revision.estado3 }}</span>
+                              {% elif revision.estado3 == 'En revision' %}
+                              <span class="label label-primary">{{ revision.estado3 }}</span>
+                              {% elif revision.estado3 == 'Cancelado' %}
+                              <span class="label label-danger">{{ revision.estado3 }}</span>
+                            {% endif %}
+                          </td>
+                          <td style="text-align: center">
+                              <a class="btn btn-primary" href="{% url 'revision:revisor3' revision.id %}" data-toggle="tooltip" title="Editar la 3ra Revisión"><i class="fa fa-pencil"></i></a>
+                          </td>
+                          <td style="text-align: center">
+                              <a class="btn btn-danger" href="{% url 'revision:eliminar' revision.id %}" data-toggle="tooltip" title="Eliminar Oficio"><i class="fa fa-trash"></i></a>
+                          </td>
+                        </tr>
+                       {% endfor %}
+
+                      </tbody>
+                    </table>
+                    <ul class="pager">
+                      <li>
+                        {% if page_obj.has_previous %}
+                        <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                        {% endif %}
+                      </li>
+                      <li>
+                        {% if page_obj.has_next %}
+                        <a href="?page={{ page_obj.next_page_number }}">Next</a> 
+                        {% endif %}
+                      </li>
+                    </ul> 
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+
+        </div>
+    </div>
+{% endblock %}

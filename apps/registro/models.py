@@ -5,9 +5,8 @@ from django.db import models
 class Registro(models.Model):
 	
     nombreEntrega = models.CharField(max_length=50,null=True, blank=True)
-    numeroFolio = models.IntegerField(null=True, blank=True)
-    asunto = models.CharField(max_length=50,null=True, blank=True)
     numeroOficio = models.CharField(max_length=50,null=True, blank=True)
+    asunto = models.CharField(max_length=50,null=True, blank=True)
     coordinador = models.CharField(max_length=50,null=True, blank=True)
     empresa = models.CharField(max_length=50,null=True, blank=True)
     fechaRecibido = models.DateField()

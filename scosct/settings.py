@@ -41,9 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'apps.administrador',
     'apps.registro',
-    'apps.revision1',
-    'apps.revision2',
-    'apps.revision3',
+    'apps.revision',
     'apps.usuario',
 )
 

@@ -13,7 +13,7 @@
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
-              <!--  <h3>Inicio</h3> -->
+                <h3>Inicio</h3> 
                 <ul class="nav side-menu">
                   <li><a><i class="glyphicon glyphicon-file" aria-hidden="true"></i>Registro de Oficios<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
@@ -24,42 +24,18 @@
                     </ul>
                   </li>
 
-                  <li><a><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i> Seguimiento <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      
-                      <li><a><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i> Revisión 1 <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i> Revisión <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                          <li><a href="{% url 'revision1:crear' %}">Registrar revisión 1</a>
+                          <li><a href="{% url 'revision:crear' %}">Registrar revisión</a>
                           </li>
-                          <li><a href="{% url 'revision1:listar' %}">Listado de la 1ra revisión</a>
+                          <li><a href="{% url 'revision:listar' %}">Listado de la revisión</a>
                           </li>
                         </ul>
                       </li>
-
-                      <li><a><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i> Revisión 2 <span class="fa fa-chevron-down"></span></a>
-                        <ul class="nav child_menu">
-                          <li><a href="{% url 'revision2:crear' %}">Registrar revisión 2</a>
-                          </li>
-                          <li><a href="{% url 'revision2:listar' %}">Listado de la 2da revisión</a>
-                          </li>
-                        </ul>
-                      </li>
-
-                      <li><a><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i> Revisión 3 <span class="fa fa-chevron-down"></span></a>
-                        <ul class="nav child_menu">
-                          <li><a href="{% url 'revision3:crear' %}">Registrar revisión 3</a>
-                          </li>
-                          <li><a href="{% url 'revision3:listar' %}">Listado de la 3ra revisión</a>
-                          </li>
-                        </ul>
-                      </li>
-
-                    </ul>
-                  </li>
 
                   <li><a><i class="glyphicon glyphicon-folder-open" aria-hidden="true"></i> Consultar Oficios <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="">Listar</a>
+                      <li><a >Listar</a>
                       </li>
                       <li><a >Agregar</a>
                       </li>

@@ -16,10 +16,10 @@
             <div class="page-title">
               <div class="title_left">
                 <h3>
-                      {% if request.get_full_path == "/registro/nuevo" %}
-                        Registrar Nuevo Oficio
+                      {% if request.get_full_path == "/revision/nuevo" %}
+                        Registrar la 3ra Revisión 
                         {% else %}
-                        Editar Oficio
+                        Editar la 3ra Revisión
                         {% endif %}
                   </h3>
               </div>
@@ -34,112 +34,109 @@
                         {% csrf_token %}
 
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.nombreEntrega.name }}">{{ form.nombreEntrega.label }}
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.registro.name }}">{{ form.registro.label }}
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            {{ form.nombreEntrega }}
+                            {{ form.registro }}
+                        </div>
+                        {% for error in form.nombre.errors %}
+                          <div class="help-block text-right animated fadeInDown" id="val-nombre-error">{{error}}</div>
+                        {% endfor %}
+                      </div>
+                      
+                      <div class="x_title">
+                        <div class="clearfix"></div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.nombreRevisor3.name }}">{{ form.nombreRevisor3.label }}
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            {{ form.nombreRevisor3 }}
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.observacion3.name }}">{{ form.observacion3.label }}
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            {{ form.observacion3 }}
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.estado3.name }}">{{ form.estado3.label }}
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            {{ form.estado3 }}
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-md-6 col-md-offset-3">
+                          <a href="{% url 'revision:listar' %}" class="btn btn-danger">Cancelar</a>
+                          <button id="send" type="submit" class="btn btn-success">Guardar</button>
+                        </div>
+                      </div>
+
+
+                      <div class="x_title">
+                        <div class="clearfix"></div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.nombreRevisor2.name }}">{{ form.nombreRevisor2.label }}
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            {{ form.nombreRevisor2 }}
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.observacion2.name }}">{{ form.observacion2.label }}
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            {{ form.observacion2 }}
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.estado2.name }}">{{ form.estado2.label }}
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            {{ form.estado2 }}
+                        </div>
+                      </div>
+                     
+
+                      <div class="x_title">
+                        <div class="clearfix"></div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.nombreRevisor1.name }}">{{ form.nombreRevisor1.label }}
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            {{ form.nombreRevisor1 }}
                         </div>
                         {% for error in form.nombre.errors %}
                           <div class="help-block text-right animated fadeInDown" id="val-nombre-error">{{error}}</div>
                         {% endfor %}
                       </div>
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.numeroOficio.name }}">{{ form.numeroOficio.label }}
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.observacion1.name }}">{{ form.observacion1.label }}
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            {{ form.numeroOficio }}
+                            {{ form.observacion1 }}
                         </div>
                         {% for error in form.nombre.errors %}
                           <div class="help-block text-right animated fadeInDown" id="val-nombre-error">{{error}}</div>
                         {% endfor %}
                       </div>
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.asunto.name }}">{{ form.asunto.label }}
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.estado1.name }}">{{ form.estado1.label }}
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            {{ form.asunto }}
-                        </div>
-                        {% for error in form.nombre.errors %}
-                          <div class="help-block text-right animated fadeInDown" id="val-nombre-error">{{error}}</div>
-                        {% endfor %}
-                      </div>
-                      <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.coordinador.name }}">{{ form.coordinador.label }}
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            {{ form.coordinador }}
-                        </div>
-                        {% for error in form.nombre.errors %}
-                          <div class="help-block text-right animated fadeInDown" id="val-nombre-error">{{error}}</div>
-                        {% endfor %}
-                      </div>
-                      <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.empresa.name }}">{{ form.empresa.label }}
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            {{ form.empresa }}
-                        </div>
-                        {% for error in form.nombre.errors %}
-                          <div class="help-block text-right animated fadeInDown" id="val-nombre-error">{{error}}</div>
-                        {% endfor %}
-                      </div>
-                      <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.fechaRecibido.name }}">{{ form.fechaRecibido.label }}
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            {{ form.fechaRecibido }}
-                        </div>
-                        {% for error in form.nombre.errors %}
-                          <div class="help-block text-right animated fadeInDown" id="val-nombre-error">{{error}}</div>
-                        {% endfor %}
-                      </div>
-                      <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.modalidad.name }}">{{ form.modalidad.label }}
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            {{ form.modalidad }}
-                        </div>
-                        {% for error in form.nombre.errors %}
-                          <div class="help-block text-right animated fadeInDown" id="val-nombre-error">{{error}}</div>
-                        {% endfor %}
-                      </div>
-                      <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.fechaEntrega.name }}">{{ form.fechaEntrega.label }}
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            {{ form.fechaEntrega }}
-                        </div>
-                        {% for error in form.nombre.errors %}
-                          <div class="help-block text-right animated fadeInDown" id="val-nombre-error">{{error}}</div>
-                        {% endfor %}
-                      </div>
-                      <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.municipio.name }}">{{ form.municipio.label }}
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            {{ form.municipio }}
-                        </div>
-                        {% for error in form.nombre.errors %}
-                          <div class="help-block text-right animated fadeInDown" id="val-nombre-error">{{error}}</div>
-                        {% endfor %}
-                      </div>
-                      <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.observacion.name }}">{{ form.observacion.label }}
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            {{ form.observacion }}
+                            {{ form.estado1 }}
                         </div>
                         {% for error in form.nombre.errors %}
                           <div class="help-block text-right animated fadeInDown" id="val-nombre-error">{{error}}</div>
                         {% endfor %}
                       </div>
 
-                      <div class="form-group">
-                        <div class="col-md-6 col-md-offset-3">
-                          <a href="{% url 'registro:listar' %}" class="btn btn-danger">Cancelar</a>
-                          <button id="send" type="submit" class="btn btn-success">Guardar</button>
-                        </div>
-                      </div>
+                     
                     </form>
                   </div>
                 </div>
@@ -151,7 +148,7 @@
 
           <div class="row">
             <div class="col-md-4 col-sm-4 col-xs-12">
-            	
+              
             </div>
 
           </div>
