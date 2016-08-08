@@ -9,8 +9,8 @@
             <div class="page-title">
               <div class="title_left">
                 <h3>
-                      Detalles de la revisión de cada oficio
-                  </h3>
+                      Realizar consulta de acuerdo a los datos correspondientes
+                </h3>
               </div>
             </div>
 
@@ -21,67 +21,44 @@
                     <div class="clearfix"></div>
                   </div>
 
+                  <div class="busqueda">
+                    <h3>
+                      Consultar Registro de Oficio
+                    </h3>
+                    <form class="navbar-search pull-left" action="/consulta/buscar/" method="POST">
+                      {% csrf_token  %}
+                      <input type="text" name="buscalo" class="control-label col-md-12 col-sm-12 col-xs-12 search-query" placeholder="Ingresar número de folio">
+                      <div class="btn-group">
+                        <button class="btn btn-primary" type="submit">
+                           Buscar
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="x_title">
+                    <div class="clearfix"></div>
+                  </div>
 
-                    <table class="table table-bordered">
-                      <thead>
-                        <tr>
-                          <th style="text-align: center">#</th>
-                          <th style="text-align: center">Folio del Oficio</th>
-                          <th style="text-align: center">Nombre del 1er Revisor</th>
-                          <th style="text-align: center">1ra observación</th>
-                          <th style="text-align: center">Estado de 1er Revisor</th>
-                          <th style="text-align: center">Nombre del 2do Revisor</th>
-                          <th style="text-align: center">2da observación</th>
-                          <th style="text-align: center">Estado del 2do Revisor</th>
-                          <th style="text-align: center">Nombre del 3er Revisor</th>
-                          <th style="text-align: center">3ra observación</th>
-                          <th style="text-align: center">Estado del 3er Revisor</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                       {% for revision in object_list %}
-                        <tr>
-                          <th scope="row" style="text-align: center">{{ revision.id }}</th>
-                          <td style="text-align: center">{{ revision.registro.numeroOficio }}</td>
-                          <td style="text-align: center">{{ revision.nombreRevisor1 }}</td>
-                          <td style="text-align: center">{{ revision.observacion1 }}</td>
-                          <td style="text-align: center">
-                            {% if revision.estado1 == 'Revisado' %}
-                              <span class="label label-success">{{ revision.estado1 }}</span>
-                              {% elif revision.estado1 == 'En revision' %}
-                              <span class="label label-primary">{{ revision.estado1 }}</span>
-                              {% elif revision.estado1 == 'Cancelado' %}
-                              <span class="label label-danger">{{ revision.estado1 }}</span>
-                            {% endif %}
-                          </td>
-                          <td style="text-align: center">{{ revision.nombreRevisor2 }}</td>
-                          <td style="text-align: center">{{ revision.observacion2 }}</td>
-                          <td style="text-align: center">
-                            {% if revision.estado2 == 'Revisado' %}
-                              <span class="label label-success">{{ revision.estado2 }}</span>
-                              {% elif revision.estado2 == 'En revision' %}
-                              <span class="label label-primary">{{ revision.estado2 }}</span>
-                              {% elif revision.estado2 == 'Cancelado' %}
-                              <span class="label label-danger">{{ revision.estado2 }}</span>
-                            {% endif %}
-                          </td>
-                          <td style="text-align: center">{{ revision.nombreRevisor3 }}</td>
-                          <td style="text-align: center">{{ revision.observacion3 }}</td>
-                          <td style="text-align: center">
-                            {% if revision.estado3 == 'Revisado' %}
-                              <span class="label label-success">{{ revision.estado3 }}</span>
-                              {% elif revision.estado3 == 'En revision' %}
-                              <span class="label label-primary">{{ revision.estado3 }}</span>
-                              {% elif revision.estado3 == 'Cancelado' %}
-                              <span class="label label-danger">{{ revision.estado3 }}</span>
-                            {% endif %}
-                          </td>
-                          
-                        </tr>
-                       {% endfor %}
+                  <div class="busqueda">
+                    <h3>
+                      Consultar Registro de Revisión
+                    </h3>
+                    <form class="navbar-search pull-left" action="/consulta/buscar/" method="POST">
+                      {% csrf_token  %}
+                      <input type="text" name="buscalo" class="control-label col-md-12 col-sm-12 col-xs-12 search-query" placeholder="Ingresar ID de Revisión">
+                      <div class="btn-group">
+                        <button class="btn btn-primary" type="submit">
+                           Buscar
+                        </button>
+                      </div>
+                    </form>
+                  </div>
 
-                      </tbody>
-                    </table>
+                   <div class="x_title">
+                    <div class="clearfix"></div>
+                  </div>
+
+                    
                     <ul class="pager">
                       <li>
                         {% if page_obj.has_previous %}

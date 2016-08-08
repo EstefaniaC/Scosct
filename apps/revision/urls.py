@@ -3,7 +3,7 @@ from django.contrib import admin
 
 from django.contrib.auth.decorators import login_required
 
-from apps.revision.views import RevisionList, Revision2List, RevisionCreate, RevisionUpdate, Revision2Update, Revision3Update, RevisionDelete
+from apps.revision.views import RevisionList, Revision2List, BuscarView, RevisionCreate, RevisionUpdate, Revision2Update, Revision3Update, RevisionDelete
 
 urlpatterns = [
     url(r'^$', login_required(RevisionList.as_view()), name="listar"),
@@ -13,4 +13,7 @@ urlpatterns = [
     url(r'^revisor2/(?P<pk>\d+)$', login_required(Revision2Update.as_view()), name='revisor2'),
     url(r'^revisor3/(?P<pk>\d+)$', login_required(Revision3Update.as_view()), name='revisor3'),
     url(r'^consulta', login_required(Revision2List.as_view()), name="consulta"),
+
+    url(r'^buscar', login_required(BuscarView.as_view()), name="buscar"),
+
 ]

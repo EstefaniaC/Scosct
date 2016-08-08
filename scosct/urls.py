@@ -25,6 +25,9 @@ urlpatterns = [
     url(r'^inicio/', include('apps.administrador.urls', namespace="administrador")),
     url(r'^registro/', include('apps.registro.urls', namespace="registro")),
     url(r'^revision/', include('apps.revision.urls', namespace="revision")),
+
+    url(r'^consulta/', include('apps.revision.urls', namespace="consulta")),
+
     url(r'^usuario/', include('apps.usuario.urls', namespace="usuario")),   
     url(r'^accounts/login/', login, {'template_name':'index.html'}, name='login'),
     url(r'^logout/', logout_then_login, name='logout'),

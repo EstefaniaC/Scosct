@@ -22,4 +22,4 @@ class Revision(models.Model):
 	activo = models.BooleanField(default=True)
 
 	def __unicode__(self):
-		return u'{}'.format(self.estado1)
+		return u'{} {} {} {}'.format(self.registro, self.estado1, self.estado2, self.estado3)

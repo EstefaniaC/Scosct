@@ -33,21 +33,22 @@
                     <form class="form-horizontal form-label-left" method="POST">
                         {% csrf_token %}
 
+                      
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.nombreEntrega.name }}">{{ form.nombreEntrega.label }}
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.numeroOficio.name }}">{{ form.numeroOficio.label }}
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            {{ form.nombreEntrega }}
+                            {{ form.numeroOficio }}
                         </div>
                         {% for error in form.nombre.errors %}
                           <div class="help-block text-right animated fadeInDown" id="val-nombre-error">{{error}}</div>
                         {% endfor %}
                       </div>
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.numeroOficio.name }}">{{ form.numeroOficio.label }}
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.nombreEntrega.name }}">{{ form.nombreEntrega.label }}
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            {{ form.numeroOficio }}
+                            {{ form.nombreEntrega }}
                         </div>
                         {% for error in form.nombre.errors %}
                           <div class="help-block text-right animated fadeInDown" id="val-nombre-error">{{error}}</div>

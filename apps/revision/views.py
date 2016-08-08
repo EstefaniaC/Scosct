@@ -1,11 +1,12 @@
 from django.shortcuts import render
 from django.core.urlresolvers import reverse_lazy
 from django.http import HttpResponseRedirect
-from django.views.generic import CreateView, UpdateView, DeleteView, ListView, FormView
+from django.views.generic import CreateView, UpdateView, DeleteView, ListView, FormView, TemplateView
 
 from apps.revision.models import Revision
 from apps.revision.forms import RevisionForm
 
+from apps.registro.models import Registro
 # Create your views here.
 
 class RevisionList(ListView):
@@ -64,3 +65,19 @@ class RevisionDelete(DeleteView):
         self.object.activo = False
         self.object.save()
         return HttpResponseRedirect(self.get_success_url())
+
+
+class BuscarView(TemplateView):
+
+    def post(self, request, *args, **kwargs):
+        buscar = request.POST['buscalo']
+
+        idRevision = Revision.objects.filter(id__contains=buscar).order_by('id')
+        if idRevision:
+            return render(request, 'consulta/buscar.html',
+            {'idRevision':idRevision, 'id':True})
+        else:
+            numOficio = Registro.objects.filter(numeroOficio__contains=buscar).order_by('id')
+            
+        return render(request, 'consulta/buscar.html',
+            {'numOficio':numOficio, 'oficio':True})

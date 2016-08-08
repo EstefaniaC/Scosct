@@ -1,0 +1,156 @@
+{% extends 'base/base.html' %}
+{% block content %}
+    <div class="container body">
+        <div class="main_container">
+            <!-- page content -->
+        <div class="right_col" role="main">
+
+         <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>
+                      Consulta
+                  </h3>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+
+                 <div class="x_title">
+                    <div class="clearfix"></div>
+                  </div>
+
+                  {% if oficio %}
+                    {% for oficio in numOficio %}
+                    <h3>
+                      Detalles del registro del oficio: 
+                    </h3>
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th style="text-align: center">#</th>
+                          <th>Número de Folio</th>
+                          <th>Nombre de quien entrega</th>
+                          <th>Asunto</th>
+                          <th>Coordinador</th>
+                          <th>Empresa</th>
+                          <th>Fecha Recibido</th>
+                          <th>Modalidad</th>
+                          <th>Fecha de Entrega</th>
+                          <th>Municipio</th>
+                          <th>Observaciones</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row" style="text-align: center">{{ oficio.id }}</th>
+                          <td>{{ oficio.numeroOficio }}</td>
+                          <td>{{ oficio.nombreEntrega }}</td>
+                          <td>{{ oficio.asunto }}</td>
+                          <td>{{ oficio.coordinador }}</td>
+                          <td>{{ oficio.empresa }}</td>
+                          <td>{{ oficio.fechaRecibido }}</td>
+                          <td>{{ oficio.modalidad }}</td>
+                          <td>{{ oficio.fechaEntrega }}</td>
+                          <td>{{ oficio.municipio }}</td>
+                          <td>{{ oficio.observacion }}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    {% endfor %}
+                  {% endif %}
+
+
+
+                  {% if id %}
+                    {% for id in idRevision %}
+                      
+                      <h3>
+                      Detalles de los registros de revisión: 
+                      </h3>
+                      <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th style="text-align: center">ID de Revisión</th>
+                          <th style="text-align: center">Folio del Oficio</th>
+                          <th style="text-align: center">1er Revisor</th>
+                          <th style="text-align: center">1ra Observacion</th>
+                          <th style="text-align: center">Estado de 1er Revisor</th>
+                          <th style="text-align: center">2do Revisor</th>
+                          <th style="text-align: center">2da Observacion</th>
+                          <th style="text-align: center">Estado del 2do Revisor</th>
+                          <th style="text-align: center">3er Revisor</th>
+                          <th style="text-align: center">3ra Observacion</th>
+                          <th style="text-align: center">Estado del 3er Revisor</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row" style="text-align: center">{{ id.id }}</th>
+                          <td style="text-align: center">{{ id.registro }}</td>
+                          <td style="text-align: center">{{ id.nombreRevisor1 }}</td>
+                          <td style="text-align: center">{{ id.observacion1 }}</td>
+                          <td style="text-align: center">
+                            {% if id.estado1 == 'Revisado' %}
+                              <span class="label label-success">{{ id.estado1 }}</span>
+                              {% elif id.estado1 == 'En revision' %}
+                              <span class="label label-primary">{{ id.estado1 }}</span>
+                              {% elif id.estado1 == 'Cancelado' %}
+                              <span class="label label-danger">{{ id.estado1 }}</span>
+                            {% endif %}
+                          </td>
+                          <td style="text-align: center">{{ id.nombreRevisor2 }}</td>
+                          <td style="text-align: center">{{ id.observacion2 }}</td>
+                          <td style="text-align: center">
+                            {% if id.estado2 == 'Revisado' %}
+                              <span class="label label-success">{{ id.estado2 }}</span>
+                              {% elif id.estado2 == 'En revision' %}
+                              <span class="label label-primary">{{ id.estado2 }}</span>
+                              {% elif id.estado2 == 'Cancelado' %}
+                              <span class="label label-danger">{{ id.estado2 }}</span>
+                            {% endif %}
+                          </td>
+                          <td style="text-align: center">{{ id.nombreRevisor3 }}</td>
+                          <td style="text-align: center">{{ id.observacion3 }}</td>
+                          <td style="text-align: center">
+                            {% if id.estado3 == 'Revisado' %}
+                              <span class="label label-success">{{ id.estado3 }}</span>
+                              {% elif revision.estado3 == 'En revision' %}
+                              <span class="label label-primary">{{ id.estado3 }}</span>
+                              {% elif id.estado3 == 'Cancelado' %}
+                              <span class="label label-danger">{{ id.estado3 }}</span>
+                            {% endif %}
+                          </td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+
+
+                    {% endfor %}
+                  {% endif %}
+                   
+                    <ul class="pager">
+                      <li>
+                        {% if page_obj.has_previous %}
+                        <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                        {% endif %}
+                      </li>
+                      <li>
+                        {% if page_obj.has_next %}
+                        <a href="?page={{ page_obj.next_page_number }}">Next</a> 
+                        {% endif %}
+                      </li>
+                    </ul> 
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+
+        </div>
+    </div>
+{% endblock %}
