@@ -17,6 +17,15 @@ class RevisionList(ListView):
         queryset = Revision.objects.filter(activo=True).order_by('id')
         return queryset
 
+class Revision2List(ListView):
+    model = Revision
+    paginate_by = 50
+    template_name = "consulta/consulta_list.html"
+
+    def get_queryset(self):
+        queryset = Revision.objects.filter(activo=True).order_by('id')
+        return queryset
+
 
 class RevisionCreate(CreateView):
     model = Revision

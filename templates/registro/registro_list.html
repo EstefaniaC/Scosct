@@ -25,7 +25,7 @@
                     <table class="table table-bordered">
                       <thead>
                         <tr>
-                          <th>#</th>
+                          <th style="text-align: center">#</th>
                           <th>Nombre de quien entrega</th>
                           <th>Número de Folio</th>
                           <th>Asunto</th>
@@ -37,7 +37,7 @@
                       <tbody>
                        {% for registro in object_list %}
                         <tr>
-                          <th scope="row">{{ registro.id }}</th>
+                          <th scope="row" style="text-align: center">{{ registro.id }}</th>
                           <td>{{ registro.nombreEntrega }}</td>
                           <td>{{ registro.numeroOficio }}</td>
                           <td>{{ registro.asunto }}</td>

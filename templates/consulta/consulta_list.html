@@ -9,7 +9,7 @@
             <div class="page-title">
               <div class="title_left">
                 <h3>
-                      Listado de Revisión
+                      Detalles de la revisión de cada oficio
                   </h3>
               </div>
             </div>
@@ -27,13 +27,15 @@
                         <tr>
                           <th style="text-align: center">#</th>
                           <th style="text-align: center">Folio del Oficio</th>
+                          <th style="text-align: center">Nombre del 1er Revisor</th>
+                          <th style="text-align: center">1ra observación</th>
                           <th style="text-align: center">Estado de 1er Revisor</th>
-                          <th style="text-align: center">Editar</th>
+                          <th style="text-align: center">Nombre del 2do Revisor</th>
+                          <th style="text-align: center">2da observación</th>
                           <th style="text-align: center">Estado del 2do Revisor</th>
-                          <th style="text-align: center">Editar</th>
+                          <th style="text-align: center">Nombre del 3er Revisor</th>
+                          <th style="text-align: center">3ra observación</th>
                           <th style="text-align: center">Estado del 3er Revisor</th>
-                          <th style="text-align: center">Editar</th>
-                          <th style="text-align: center">Acción</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -41,6 +43,8 @@
                         <tr>
                           <th scope="row" style="text-align: center">{{ revision.id }}</th>
                           <td style="text-align: center">{{ revision.registro.numeroOficio }}</td>
+                          <td style="text-align: center">{{ revision.nombreRevisor1 }}</td>
+                          <td style="text-align: center">{{ revision.observacion1 }}</td>
                           <td style="text-align: center">
                             {% if revision.estado1 == 'Revisado' %}
                               <span class="label label-success">{{ revision.estado1 }}</span>
@@ -50,9 +54,8 @@
                               <span class="label label-danger">{{ revision.estado1 }}</span>
                             {% endif %}
                           </td>
-                          <td style="text-align: center">
-                              <a class="btn btn-primary" href="{% url 'revision:revisor1' revision.id %}" data-toggle="tooltip" title="Editar la 1ra Revisión"><i class="fa fa-pencil"></i></a>
-                          </td>
+                          <td style="text-align: center">{{ revision.nombreRevisor2 }}</td>
+                          <td style="text-align: center">{{ revision.observacion2 }}</td>
                           <td style="text-align: center">
                             {% if revision.estado2 == 'Revisado' %}
                               <span class="label label-success">{{ revision.estado2 }}</span>
@@ -62,9 +65,8 @@
                               <span class="label label-danger">{{ revision.estado2 }}</span>
                             {% endif %}
                           </td>
-                          <td style="text-align: center">
-                              <a class="btn btn-primary" href="{% url 'revision:revisor2' revision.id %}" data-toggle="tooltip" title="Editar la 2da Revisión"><i class="fa fa-pencil"></i></a>
-                          </td>
+                          <td style="text-align: center">{{ revision.nombreRevisor3 }}</td>
+                          <td style="text-align: center">{{ revision.observacion3 }}</td>
                           <td style="text-align: center">
                             {% if revision.estado3 == 'Revisado' %}
                               <span class="label label-success">{{ revision.estado3 }}</span>
@@ -74,12 +76,7 @@
                               <span class="label label-danger">{{ revision.estado3 }}</span>
                             {% endif %}
                           </td>
-                          <td style="text-align: center">
-                              <a class="btn btn-primary" href="{% url 'revision:revisor3' revision.id %}" data-toggle="tooltip" title="Editar la 3ra Revisión"><i class="fa fa-pencil"></i></a>
-                          </td>
-                          <td style="text-align: center">
-                              <a class="btn btn-danger" href="{% url 'revision:eliminar' revision.id %}" data-toggle="tooltip" title="Eliminar Oficio"><i class="fa fa-trash"></i></a>
-                          </td>
+                          
                         </tr>
                        {% endfor %}
 

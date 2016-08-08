@@ -76,13 +76,65 @@
                           <div class="help-block text-right animated fadeInDown" id="val-nombre-error">{{error}}</div>
                         {% endfor %}
                       </div>
-
                       <div class="form-group">
                         <div class="col-md-6 col-md-offset-3">
                           <a href="{% url 'revision:listar' %}" class="btn btn-danger">Cancelar</a>
                           <button id="send" type="submit" class="btn btn-success">Guardar</button>
                         </div>
                       </div>
+
+
+                      <div class="x_title">
+                        <div class="clearfix"></div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.nombreRevisor2.name }}">{{ form.nombreRevisor2.label }}
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            {{ form.nombreRevisor2 }}
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.observacion2.name }}">{{ form.observacion2.label }}
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            {{ form.observacion2 }}
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.estado2.name }}">{{ form.estado2.label }}
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            {{ form.estado2 }}
+                        </div>
+                      </div>
+                     
+                      <div class="x_title">
+                        <div class="clearfix"></div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.nombreRevisor3.name }}">{{ form.nombreRevisor3.label }}
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            {{ form.nombreRevisor3 }}
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.observacion3.name }}">{{ form.observacion3.label }}
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            {{ form.observacion3 }}
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.estado3.name }}">{{ form.estado3.label }}
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            {{ form.estado3 }}
+                        </div>
+                      </div>
+                      
+
                     </form>
                   </div>
                 </div>
