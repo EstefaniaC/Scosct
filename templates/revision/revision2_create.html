@@ -65,7 +65,12 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.estado2.name }}">{{ form.estado2.label }}
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            {{ form.estado2 }}
+                           <select class="control-label col-md-3 col-sm-3 col-xs-12" name="estado2">
+                            <option></option>
+                            <option>Revisado</option>
+                            <option>En revision</option>
+                            <option>Cancelado</option>
+                          </select>                        
                         </div>
                       </div>
                       <div class="form-group">

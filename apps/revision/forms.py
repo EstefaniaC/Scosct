@@ -22,6 +22,7 @@ class RevisionForm(forms.ModelForm):
             'nombreRevisor3',      
             'observacion3',
             'estado3',
+            'concluido',
         ]
         labels = {
             'registro': 'Folio del oficio:',
@@ -37,6 +38,7 @@ class RevisionForm(forms.ModelForm):
             'nombreRevisor3': 'Nombre del 3er revisor:',
             'observacion3': '3er observación:',
             'estado3': 'Estado del 3er revisor:',
+            'concluido': 'Trámite Concluido:',
         }
         widgets = {
             'registro': forms.Select(choices=Registro.objects.all().filter(activo=True).values_list('id'),
@@ -53,5 +55,5 @@ class RevisionForm(forms.ModelForm):
             'nombreRevisor3': forms.TextInput(attrs={'class': 'form-control'}),
             'observacion3': forms.Textarea(attrs={'class': 'form-control'}),
             'estado3': forms.TextInput(attrs={'clas': 'form-control'}),
-
+            'concluido': forms.TextInput(attrs={'clas': 'form-control'}),
         }

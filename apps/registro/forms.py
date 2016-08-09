@@ -21,8 +21,8 @@ class RegistroForm(forms.ModelForm):
             'observacion',
         ]
         labels = {
-            'nombreEntrega': 'Nombre de quien entrega el Oficio:',
-            'numeroOficio': 'Número del oficio:',
+            'nombreEntrega': 'Nombre del solicitante:',
+            'numeroOficio': 'Folio del oficio:',
             'asunto': 'Asunto:',
             'coordinador': 'Coordinador:',
             'empresa': 'Empresa:',

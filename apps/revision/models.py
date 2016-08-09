@@ -18,6 +18,7 @@ class Revision(models.Model):
 	nombreRevisor3 = models.CharField(max_length=100, null=True, blank=True)
 	estado3 = models.CharField(max_length=30, null=True, blank=True)
 	observacion3 = models.TextField(max_length=500, null=True, blank=True)
+	concluido = models.CharField(max_length=30, null=True, blank=True)
 
 	activo = models.BooleanField(default=True)
 

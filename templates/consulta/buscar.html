@@ -30,8 +30,8 @@
                       <thead>
                         <tr>
                           <th style="text-align: center">#</th>
-                          <th>Número de Folio</th>
-                          <th>Nombre de quien entrega</th>
+                          <th>Folio del oficio</th>
+                          <th>Nombre del solicitante</th>
                           <th>Asunto</th>
                           <th>Coordinador</th>
                           <th>Empresa</th>
@@ -73,16 +73,17 @@
                       <thead>
                         <tr>
                           <th style="text-align: center">ID de Revisión</th>
-                          <th style="text-align: center">Folio del Oficio</th>
+                          <th style="text-align: center">Folio del Ofició</th>
                           <th style="text-align: center">1er Revisor</th>
-                          <th style="text-align: center">1ra Observacion</th>
+                          <th style="text-align: center">1ra Observación</th>
                           <th style="text-align: center">Estado de 1er Revisor</th>
                           <th style="text-align: center">2do Revisor</th>
-                          <th style="text-align: center">2da Observacion</th>
+                          <th style="text-align: center">2da Observación</th>
                           <th style="text-align: center">Estado del 2do Revisor</th>
                           <th style="text-align: center">3er Revisor</th>
-                          <th style="text-align: center">3ra Observacion</th>
+                          <th style="text-align: center">3ra Observación</th>
                           <th style="text-align: center">Estado del 3er Revisor</th>
+                          <th style="text-align: center">Estado del Trámite</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -93,34 +94,53 @@
                           <td style="text-align: center">{{ id.observacion1 }}</td>
                           <td style="text-align: center">
                             {% if id.estado1 == 'Revisado' %}
-                              <span class="label label-success">{{ id.estado1 }}</span>
+                              <h2><span class="label label-success">{{ id.estado1 }}</span>
+                                </h2> 
                               {% elif id.estado1 == 'En revision' %}
-                              <span class="label label-primary">{{ id.estado1 }}</span>
+                              <h2><span class="label label-primary">{{ id.estado1 }}</span>
+                                </h2> 
                               {% elif id.estado1 == 'Cancelado' %}
-                              <span class="label label-danger">{{ id.estado1 }}</span>
+                              <h2><span class="label label-danger">{{ id.estado1 }}</span>
+                                </h2>
                             {% endif %}
                           </td>
                           <td style="text-align: center">{{ id.nombreRevisor2 }}</td>
                           <td style="text-align: center">{{ id.observacion2 }}</td>
                           <td style="text-align: center">
                             {% if id.estado2 == 'Revisado' %}
-                              <span class="label label-success">{{ id.estado2 }}</span>
+                              <h2><span class="label label-success">{{ id.estado2 }}</span>
+                              </h2> 
                               {% elif id.estado2 == 'En revision' %}
-                              <span class="label label-primary">{{ id.estado2 }}</span>
+                              <h2><span class="label label-primary">{{ id.estado2 }}</span>
+                                </h2> 
                               {% elif id.estado2 == 'Cancelado' %}
-                              <span class="label label-danger">{{ id.estado2 }}</span>
+                              <h2><span class="label label-danger">{{ id.estado2 }}</span>
+                              </h2>
                             {% endif %}
                           </td>
                           <td style="text-align: center">{{ id.nombreRevisor3 }}</td>
                           <td style="text-align: center">{{ id.observacion3 }}</td>
                           <td style="text-align: center">
                             {% if id.estado3 == 'Revisado' %}
-                              <span class="label label-success">{{ id.estado3 }}</span>
+                              <h2><span class="label label-success">{{ id.estado3 }}</span>
+                                </h2> 
                               {% elif revision.estado3 == 'En revision' %}
-                              <span class="label label-primary">{{ id.estado3 }}</span>
+                              <h2><span class="label label-primary">{{ id.estado3 }}</span>
+                                </h2> 
                               {% elif id.estado3 == 'Cancelado' %}
-                              <span class="label label-danger">{{ id.estado3 }}</span>
+                              <h2><span class="label label-danger">{{ id.estado3 }}</span>
+                              </h2>
                             {% endif %}
+                          </td>
+                          <td>
+                            {% if id.concluido == 'Concluido' %}
+                              <h2>
+                              <span class="label label-success">{{ id.concluido }}</span>
+                              </h2> 
+                              {% elif id.concluido == 'Reenviado' %}
+                              <h2><span class="label label-warning">{{ id.concluido }}</span>
+                              </h2>
+                              {% endif %}
                           </td>
                         </tr>
 

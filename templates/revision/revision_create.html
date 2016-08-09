@@ -70,8 +70,14 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.estado1.name }}">{{ form.estado1.label }}
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            {{ form.estado1 }}
+                           <select class="control-label col-md-3 col-sm-3 col-xs-12" name="estado1">
+                            <option></option>
+                            <option>Revisado</option>
+                            <option>En revision</option>
+                            <option>Cancelado</option>
+                          </select>                        
                         </div>
+
                         {% for error in form.nombre.errors %}
                           <div class="help-block text-right animated fadeInDown" id="val-nombre-error">{{error}}</div>
                         {% endfor %}

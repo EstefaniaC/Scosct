@@ -33,6 +33,7 @@
                           <th style="text-align: center">Editar</th>
                           <th style="text-align: center">Estado del 3er Revisor</th>
                           <th style="text-align: center">Editar</th>
+                          <th>Trámite</th>
                           <th style="text-align: center">Acción</th>
                         </tr>
                       </thead>
@@ -43,11 +44,14 @@
                           <td style="text-align: center">{{ revision.registro.numeroOficio }}</td>
                           <td style="text-align: center">
                             {% if revision.estado1 == 'Revisado' %}
-                              <span class="label label-success">{{ revision.estado1 }}</span>
+                              <h2><span class="label label-success">{{ revision.estado1 }}</span>
+                                </h2>
                               {% elif revision.estado1 == 'En revision' %}
-                              <span class="label label-primary">{{ revision.estado1 }}</span>
+                              <h2><span class="label label-primary">{{ revision.estado1 }}</span>
+                                </h2>
                               {% elif revision.estado1 == 'Cancelado' %}
-                              <span class="label label-danger">{{ revision.estado1 }}</span>
+                              <h2><span class="label label-danger">{{ revision.estado1 }}</span>
+                              </h2>
                             {% endif %}
                           </td>
                           <td style="text-align: center">
@@ -55,11 +59,14 @@
                           </td>
                           <td style="text-align: center">
                             {% if revision.estado2 == 'Revisado' %}
-                              <span class="label label-success">{{ revision.estado2 }}</span>
+                              <h2><span class="label label-success">{{ revision.estado2 }}</span>
+                                </h2>
                               {% elif revision.estado2 == 'En revision' %}
-                              <span class="label label-primary">{{ revision.estado2 }}</span>
+                              <h2><span class="label label-primary">{{ revision.estado2 }}</span>
+                              </h2>
                               {% elif revision.estado2 == 'Cancelado' %}
-                              <span class="label label-danger">{{ revision.estado2 }}</span>
+                              <h2><span class="label label-danger">{{ revision.estado2 }}</span>
+                              </h2>
                             {% endif %}
                           </td>
                           <td style="text-align: center">
@@ -67,15 +74,26 @@
                           </td>
                           <td style="text-align: center">
                             {% if revision.estado3 == 'Revisado' %}
-                              <span class="label label-success">{{ revision.estado3 }}</span>
+                              <h2><span class="label label-success">{{ revision.estado3 }}</span>
+                              </h2>
                               {% elif revision.estado3 == 'En revision' %}
-                              <span class="label label-primary">{{ revision.estado3 }}</span>
+                              <h2><span class="label label-primary">{{ revision.estado3 }}</span>
+                              </h2>
                               {% elif revision.estado3 == 'Cancelado' %}
-                              <span class="label label-danger">{{ revision.estado3 }}</span>
+                              <h2><span class="label label-danger">{{ revision.estado3 }}</span>
+                              </h2>
                             {% endif %}
                           </td>
                           <td style="text-align: center">
                               <a class="btn btn-primary" href="{% url 'revision:revisor3' revision.id %}" data-toggle="tooltip" title="Editar la 3ra Revisión"><i class="fa fa-pencil"></i></a>
+                          </td>
+                          <td>
+                            {% if revision.concluido == 'Concluido' %}
+                              <h2><span class="label label-success">{{ revision.concluido }}</span></h2> 
+                              {% elif revision.concluido == 'Reenviado' %} 
+                              <h2><span class="label label-warning">{{ revision.concluido }}</span>
+                              </h2>
+                              {% endif %}
                           </td>
                           <td style="text-align: center">
                               <a class="btn btn-danger" href="{% url 'revision:eliminar' revision.id %}" data-toggle="tooltip" title="Eliminar Oficio"><i class="fa fa-trash"></i></a>
