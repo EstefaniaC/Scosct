@@ -30,7 +30,7 @@
                 <div class="x_panel">
                   <div class="x_content">
 
-                    <form class="form-horizontal form-label-left" method="POST">
+                    <form class="form-horizontal form-label-left" method="POST" enctype="multipart/form-data">
                         {% csrf_token %}
 
                       
@@ -129,6 +129,17 @@
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             {{ form.observacion }}
+                        </div>
+                        {% for error in form.nombre.errors %}
+                          <div class="help-block text-right animated fadeInDown" id="val-nombre-error">{{error}}</div>
+                        {% endfor %}
+                      </div>
+
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.oficio.name }}">{{ form.oficio.label }}
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            {{ form.oficio }}
                         </div>
                         {% for error in form.nombre.errors %}
                           <div class="help-block text-right animated fadeInDown" id="val-nombre-error">{{error}}</div>

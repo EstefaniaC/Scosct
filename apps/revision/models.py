@@ -19,6 +19,7 @@ class Revision(models.Model):
 	estado3 = models.CharField(max_length=30, null=True, blank=True)
 	observacion3 = models.TextField(max_length=500, null=True, blank=True)
 	concluido = models.CharField(max_length=30, null=True, blank=True)
+	oficioConcluido = models.ImageField(upload_to='oficiosConcluidos', default='path/to/my/default/image.jpg')
 
 	activo = models.BooleanField(default=True)
 

@@ -15,6 +15,7 @@ class Registro(models.Model):
     municipio = models.CharField(max_length=25,null=True, blank=True)
     observacion = models.TextField(max_length=500)
     activo = models.BooleanField(default=True)
-    
+    oficio = models.ImageField(upload_to='oficios', default='path/to/my/default/image.jpg')
+
     def __unicode__(self):
         return u'{}'.format(self.numeroOficio)

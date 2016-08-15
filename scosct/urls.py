@@ -14,12 +14,16 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.conf import settings
 
 #from scosct.views import Index
 from django.contrib.auth.views import login, logout_then_login, password_reset, password_reset_done, password_reset_confirm, password_reset_complete
 
 
 urlpatterns = [
+    url(r'^media/(?P<path>.*)$','django.views.static.serve',
+        {'document_root':settings.MEDIA_ROOT,}),
+
     url(r'^admin/', include(admin.site.urls)),
 	#url(r'^$', Index.as_view(), name="index"),
     url(r'^inicio/', include('apps.administrador.urls', namespace="administrador")),
