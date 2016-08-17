@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.core.urlresolvers import reverse_lazy
 from django.http import HttpResponseRedirect
 from django.views.generic import CreateView, UpdateView, DeleteView, ListView, FormView
+from django.shortcuts import render_to_response
+from django.template import RequestContext
 
 from apps.registro.models import Registro
 from apps.registro.forms import RegistroForm
@@ -41,3 +43,4 @@ class RegistroDelete(DeleteView):
         self.object.activo = False
         self.object.save()
         return HttpResponseRedirect(self.get_success_url())
+

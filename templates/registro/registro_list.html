@@ -21,7 +21,6 @@
                     <div class="clearfix"></div>
                   </div>
 
-
                     <table class="table table-bordered">
                       <thead>
                         <tr>
@@ -30,7 +29,7 @@
                           <th>Asunto</th>
                           <th>Coordinador</th>
                           <th>Empresa</th>
-                          <th>Imagen</th>
+                          <th>Oficio inicial</th>
                           <th style="text-align: center">Acciones</th>
                         </tr>
                       </thead>
@@ -42,7 +41,9 @@
                           <td>{{ registro.asunto }}</td>
                           <td>{{ registro.coordinador }}</td>
                           <td>{{ registro.empresa }}</td>
-                          <td>{{ registro.oficio }}</td>
+                          <td style="text-align: center">
+                            <a class="btn btn-success" data-toggle="tooltip" title="Visualizar Oficio" href="{{ registro.oficio.url }}" class='responsive'><i class="fa fa-eye"></i></a> 
+                          </td>
                           <td style="text-align: center">
                               <a class="btn btn-primary" href="{% url 'registro:editar' registro.id %}" data-toggle="tooltip" title="Editar Oficio"><i class="fa fa-pencil"></i></a>
                               <a class="btn btn-danger" href="{% url 'registro:eliminar' registro.id %}" data-toggle="tooltip" title="Eliminar Oficio"><i class="fa fa-trash"></i></a>

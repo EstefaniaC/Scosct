@@ -40,6 +40,7 @@
                           <th>Fecha de Entrega</th>
                           <th>Municipio</th>
                           <th>Observaciones</th>
+                          <th>Oficio inicial</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -55,6 +56,9 @@
                           <td>{{ oficio.fechaEntrega }}</td>
                           <td>{{ oficio.municipio }}</td>
                           <td>{{ oficio.observacion }}</td>
+                          <td style="text-align: center">
+                            <a class="btn btn-success" data-toggle="tooltip" title="Visualizar Oficio" href="{{ oficio.oficio.url }}" class='responsive'><i class="fa fa-eye"></i></a> 
+                          </td>
                         </tr>
                       </tbody>
                     </table>
@@ -84,6 +88,7 @@
                           <th style="text-align: center">3ra Observación</th>
                           <th style="text-align: center">Estado del 3er Revisor</th>
                           <th style="text-align: center">Estado del Trámite</th>
+                          <th style="text-align: center">Oficio Terminado</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -141,6 +146,9 @@
                               <h2><span class="label label-warning">{{ id.concluido }}</span>
                               </h2>
                               {% endif %}
+                          </td>
+                          <td style="text-align: center">
+                            <a class="btn btn-success" data-toggle="tooltip" title="Visualizar Oficio" href="{{ id.oficioConcluido.url }}" class='responsive'><i class="fa fa-eye"></i></a> 
                           </td>
                         </tr>
 

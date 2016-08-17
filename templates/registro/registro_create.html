@@ -30,7 +30,7 @@
                 <div class="x_panel">
                   <div class="x_content">
 
-                    <form class="form-horizontal form-label-left" method="POST" enctype="multipart/form-data">
+                    <form class="form-horizontal form-label-left" action='' method="POST" enctype='multipart/form-data'>
                         {% csrf_token %}
 
                       
@@ -136,8 +136,8 @@
                       </div>
 
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.oficio.name }}">{{ form.oficio.label }}
-                        </label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ form.oficio.name }}">{{ form.oficio.label }} 
+                        </label><img class="control-label col-md-3 col-sm-3 col-xs-12" src="{{ registro.oficio.url }}" class='img-responsive'>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             {{ form.oficio }}
                         </div>

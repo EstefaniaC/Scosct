@@ -12,7 +12,7 @@ Class-based views
 Including another URLconf
     1. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import include, url
+from django.conf.urls import include, url, patterns
 from django.contrib import admin
 from django.conf import settings
 
@@ -20,7 +20,8 @@ from django.conf import settings
 from django.contrib.auth.views import login, logout_then_login, password_reset, password_reset_done, password_reset_confirm, password_reset_complete
 
 
-urlpatterns = [
+urlpatterns = patterns('',
+
     url(r'^media/(?P<path>.*)$','django.views.static.serve',
         {'document_root':settings.MEDIA_ROOT,}),
 
@@ -50,4 +51,4 @@ urlpatterns = [
         ),
     url(r'^reset/done', password_reset_complete, {'template_name': 'registration/password_reset_complete.html'},
         name='password_reset_complete'),
-]
+)
