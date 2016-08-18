@@ -34,7 +34,7 @@
                           <th style="text-align: center">Estado del 3er Revisor</th>
                           <th style="text-align: center">Editar</th>
                           <th style="text-align: center">Trámite</th>
-                          <th style="text-align: center">Oficio escaneado</th>
+                          <th style="text-align: center">Oficio Concluido</th>
                           <th style="text-align: center">Acción</th>
                         </tr>
                       </thead>
@@ -97,10 +97,10 @@
                               {% endif %}
                           </td>
                           <td style="text-align: center">
-                            <a class="btn btn-success" data-toggle="tooltip" title="Visualizar Oficio" href="{{ revision.oficioConcluido.url }}" class='responsive'><i class="fa fa-eye"></i></a> 
+                            <a class="btn btn-success" href="{% url 'revision:visualizar' revision.id %}" data-toggle="tooltip" title="Visualizar Oficio"><i class="fa fa-eye"></i></a> 
                           </td>
                           <td style="text-align: center">
-                              <a class="btn btn-danger" href="{% url 'revision:eliminar' revision.id %}" data-toggle="tooltip" title="Eliminar Oficio"><i class="fa fa-trash"></i></a>
+                            <a class="btn btn-danger" href="{% url 'revision:eliminar' revision.id %}" data-toggle="tooltip" title="Eliminar Oficio"><i class="fa fa-trash"></i></a>
                           </td>
                         </tr>
                        {% endfor %}

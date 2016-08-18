@@ -44,3 +44,8 @@ class RegistroDelete(DeleteView):
         self.object.save()
         return HttpResponseRedirect(self.get_success_url())
 
+class RegistroVisualizar(UpdateView):
+    model = Registro
+    form_class = RegistroForm
+    template_name = "registro/visualizar.html"
+    success_url = reverse_lazy("registro:listar")

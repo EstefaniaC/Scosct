@@ -81,3 +81,10 @@ class BuscarView(TemplateView):
             
         return render(request, 'consulta/buscar.html',
             {'numOficio':numOficio, 'oficio':True})
+
+
+class RevisionVisualizar(UpdateView):
+    model = Revision
+    form_class = RevisionForm
+    template_name = "revision/visualizar.html"
+    success_url = reverse_lazy("revision:listar")

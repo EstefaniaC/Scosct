@@ -32,7 +32,7 @@ class RegistroForm(forms.ModelForm):
             'fechaEntrega': 'Fecha de entrega:',
             'municipio': 'Municipio:',
             'observacion': 'Observaciones:',
-            'oficio': 'Oficio escaneado:',
+            'oficio': 'Oficio inicial:',
         }
         widgets = {
             'nombreEntrega': forms.TextInput(attrs={'class': 'form-control'}),
