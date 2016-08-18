@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>SCOSCT</title>
-	<link rel="icon" type="img/png" href="{% static 'C:\ProyectosMetrica\scosct\static\img\icono.png' %}">
+	<link rel="icon" type="img/png" href="{% static 'C:\proyecto\scosct\static\img\icono3.png' %}">
 	<link href="{% static 'vendors/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="{% static 'vendors/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
@@ -16,7 +16,24 @@
 	
 </head>
 <body class="nav-md">
-<img class="img img-responsive" align="center" src="{% static 'C:\ProyectosMetrica\scosct\static\img\banner5.png' %}"/>
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="{% static 'C:\proyecto\scosct\static\img\banner1.png' %}">
+    </div>
+    <div class="item">
+      <img src="{% static 'C:\proyecto\scosct\static\img\banner2.png' %}">
+      <div class="carousel-caption">
+      </div>
+    </div>
+  </div>
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+  </a>
+</div>
 <div class="container body">
 	<div class="main container">
 
